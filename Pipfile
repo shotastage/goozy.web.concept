@@ -10,6 +10,7 @@ mirage-django-lts = "*"
 django = "*"
 django-initial-setup = "*"
 pillow = "*"
+django-widget-tweaks = "*"
 
 [requires]
 python_version = "3.8"
