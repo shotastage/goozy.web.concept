@@ -8,6 +8,7 @@ mirage-django-lts = "*"
 
 [packages]
 django = "*"
+django-initial-setup = "*"
 
 [requires]
 python_version = "3.8"
