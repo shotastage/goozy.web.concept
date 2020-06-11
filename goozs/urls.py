@@ -1,6 +1,10 @@
 from django.urls import path
-from goozs.views import YOUR_VIEW_CLASSES
+from goozs.views import (
+    GoozsCreateView,
+    GoozsIndexView,
+)
 
 urlpatterns = [
-    # path('url_letter/', YOUR_VIEW_CLASS.as_view(), name='starts'),
+    path('', GoozsIndexView.as_view(), name='index'),
+    path('register/', GoozsCreateView.as_view(), name='register'),
 ]
