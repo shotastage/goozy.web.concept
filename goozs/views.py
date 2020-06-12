@@ -10,7 +10,7 @@ class GoozsIndexView(LoginRequiredMixin, ListView):
     login_url = '/account/login/'
     redirect_field_name = 'redirect_to'
     template_name = "index.html"
-    paginate_by = 20
+    paginate_by = 10
 
     def get_queryset(self):
         print(self.kwargs.get('username'))
