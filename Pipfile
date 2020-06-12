@@ -12,6 +12,10 @@ django-initial-setup = "*"
 pillow = "*"
 django-widget-tweaks = "*"
 dj-database-url = "*"
+psycopg2-binary = "*"
+gunicorn = "*"
+whitenoise = "*"
+django-filter = "*"
 
 [requires]
 python_version = "3.8"
