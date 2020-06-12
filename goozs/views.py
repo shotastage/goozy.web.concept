@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, FormView, ListView
 from goozs.models import Gooz
-from goozs.forms import RegisterForm
+
 # Create your views here.
 
 
@@ -24,8 +24,6 @@ class GoozsCreateView(CreateView):
     def get_form(self):
         form = super(GoozsCreateView, self).get_form()
         form.fields['name'].label = '品名'
-        form.initial['name'] = '品名'
         form.fields['serial'].label = 'シリアル'
-        form.initial['serial'] = '製品のシリアルナンバーなど'
 
         return form

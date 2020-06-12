@@ -13,17 +13,16 @@
 </div>
 
 
-<form method="post" novalidate>{% csrf_token %}
+<form enctype="multipart/form-data" method="post" novalidate>{% csrf_token %}
 
     
     <div class="form-group">
         <div class="input-group">
             <label class="input-group-btn">
-                <span class="btn btn-primary">
-                    Choose File<input type="file" id="file" style="display:none">
+                <span class="btn btn-lg btn-primary">
+                    Choose File{{form.photo|add_class:"form-control"|attr:"type:file"|attr:"id:file"|attr:"style:display:none"}}
                 </span>
             </label>
-            <input type="text" class="form-control" readonly="">
         </div>
     </div>
     <div class="form-group">
@@ -50,12 +49,6 @@ $('#file').on('change', function (e) {
         $("#preview").attr('src', e.target.result);
     }
     reader.readAsDataURL(e.target.files[0]);
-});
-$(document).on('change', ':file', function() {
-    var input = $(this),
-    numFiles = input.get(0).files ? input.get(0).files.length : 1,
-    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
-    input.parent().parent().next(':text').val(label);
 });
 </script>
 
