@@ -11,6 +11,7 @@ django = "*"
 django-initial-setup = "*"
 pillow = "*"
 django-widget-tweaks = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.8"
