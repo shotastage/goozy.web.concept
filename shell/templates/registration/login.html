@@ -11,8 +11,8 @@
         <div class="card-body">
           <form method="post" action="{% url 'login' %}">{% csrf_token %}
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              {{form.username|add_class:"form-control"|add_class:"border"|add_class:"border-primary"|attr:"placeholder=email@example.com"}}
+              <label for="exampleInputEmail1">Username</label>
+              {{form.username|add_class:"form-control"|add_class:"border"|add_class:"border-primary"|attr:"placeholder=ex.shota"}}
             </div>
 
             <!--
