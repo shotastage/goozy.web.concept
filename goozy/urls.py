@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('first_setup.urls')),
     path('', include('goozs.urls')),
+    path('account/', include('account.urls')),
+    path('account/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -7,20 +7,23 @@ from goozs.models import Gooz
 
 
 class GoozsIndexView(LoginRequiredMixin, ListView):
-    login_url = '/login/'
+    login_url = '/account/login/'
     redirect_field_name = 'redirect_to'
     template_name = "index.html"
     paginate_by = 20
 
-    model = Gooz
+    def get_queryset(self):
+        print(self.kwargs.get('username'))
+        return Gooz.objects.filter(registered_by=self.request.user)
+
 
 
 class GoozsCreateView(LoginRequiredMixin, CreateView):
     template_name = "register.html"
-    login_url = '/login/'
+    login_url = '/account/login/'
     redirect_field_name = 'redirect_to'
     model = Gooz
-    fields = ['name', 'serial', 'photo']
+    fields = ['name', 'serial', 'photo', 'registered_by']
     success_url = "/"
 
 

@@ -32,6 +32,7 @@
     <div class="form-group">
         <label>シリアル</label>
         {{form.serial|add_class:"form-control"}}
+        <input name="registered_by" maxlength="255" hidden required id="id_registered_by" value="{{user.get_username}}"">
     </div>
 
     <button type="submit" class="btn btn-primary">登録</button>

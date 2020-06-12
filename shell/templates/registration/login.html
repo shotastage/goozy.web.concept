@@ -1,0 +1,39 @@
+{% extends '../base.html' %}
+{% load widget_tweaks %}
+
+{% block body %}
+
+<div class="jumbotron" style="background:white;">
+<div class="row align-items-center">
+    <div class="col-sm-4 offset-md-4">
+      <div class="card shadow border border-primary">
+        <div class="card-header bg-primary text-white font-weight-bold">Login</div>
+        <div class="card-body">
+          <form method="post" action="{% url 'login' %}">{% csrf_token %}
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              {{form.username|add_class:"form-control"|add_class:"border"|add_class:"border-primary"|attr:"placeholder=email@example.com"}}
+            </div>
+
+            <!--
+            <div class="form-group">
+              <label for="exampleInputEmail1">Full Name</label>
+              <input type="text" class="form-control border border-primary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe">
+            </div>
+            -->
+    
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              {{form.password|add_class:"form-control"|add_class:"border"|add_class:"border-primary"|attr:"placeholder=************"}}
+            </div>
+           
+            <input type="submit" class="btn btn-primary" value="login" >Login <i class="fas fa-pencil-alt"></i></button> <small>Don't have an account? Go <a href="/account/signup">here</a></small>
+            <input type="hidden" name="next" value="{{ next }}" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
